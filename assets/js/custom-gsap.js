@@ -23,26 +23,32 @@
   ////////////////////////////////////////////////////
   // 01. Smooth Scroll Js
   function smoothSctoll() {
-    $(".smooth a, a[href^='#']:not([href='#'])").on("click", function (
-      event,
-    ) {
-      var target = $(this.getAttribute("href"));
-      if (target.length) {
-        event.preventDefault();
-        if (window.smoother) {
-          window.smoother.scrollTo(target[0], true, "top 120px");
-        } else {
-          $("html, body")
-            .stop()
-            .animate(
-              {
-                scrollTop: target.offset().top - 120,
-              },
-              1500,
-            );
+    $(document).on(
+      "click",
+      ".smooth a, a[href^='#']:not([href='#'])",
+      function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          if ($(this).closest(".tw-offcanvas-2-area").length) {
+            $(".tw-offcanvas-2-area").removeClass("opened");
+            $(".body-overlay").removeClass("opened");
+          }
+          if (window.smoother) {
+            window.smoother.scrollTo(target[0], true, "top 120px");
+          } else {
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 120,
+                },
+                1500,
+              );
+          }
         }
-      }
-    });
+      },
+    );
   }
   smoothSctoll();
   if ($("#smooth-wrapper").length && $("#smooth-content").length) {
