@@ -8194,6 +8194,8 @@ body.tw-magic-cursor #magic-cursor {
 .banner-three-title {
   font-size: 397px;
   line-height: 83%;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 @media screen and (max-width: 1799px) {
   .banner-three-title {
@@ -8455,6 +8457,9 @@ body.tw-magic-cursor #magic-cursor {
     z-index: 1;
     text-align: center;
     margin-block-end: 30px;
+    font-size: 12.5vw;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
 @media screen and (max-width: 424px) {
