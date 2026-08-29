@@ -8428,6 +8428,40 @@ body.tw-magic-cursor #magic-cursor {
     inset-block-end: 38%;
   }
 }
+@media screen and (max-width: 767px) {
+  .banner-three-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-three-man {
+    position: static !important;
+    left: auto !important;
+    inset-block-end: auto;
+    transform: none !important;
+    order: -1;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 24px;
+    z-index: 2;
+  }
+  .banner-three-man img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .banner-three-title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-block-end: 30px;
+  }
+}
+@media screen and (max-width: 424px) {
+  .banner-three-man {
+    max-width: 220px;
+  }
+}
 
 .about-area {
   background: #f4f2ee;
