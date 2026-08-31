@@ -73,6 +73,47 @@
 }
 </style>
 
+
+<style>
+.header-three-social .header-social-link {
+  width: 64px;
+  height: auto;
+  min-height: 78px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 8px 4px 4px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .25s ease, background-color .25s ease;
+}
+.header-three-social .header-social-link:hover {
+  transform: translateY(-2px);
+}
+.header-three-social .header-social-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 3px 7px rgba(0,0,0,.16);
+  font-size: 22px;
+  line-height: 1;
+}
+.header-three-social .header-social-label {
+  display: block;
+  color: #111;
+  font-size: 13px;
+  line-height: 1.1;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
+</style>
 </head>
 
   <body class="tw-magic-cursor">
@@ -314,49 +355,34 @@
           <div class="header-three-social d-none d-lg-block">
             <ul class="d-flex tw-gap-205">
               <li>
-                <a
-                  class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="https://github.com/Anushchinnasamy"
-                  target="_blank"
-                  rel="noopener"
-                  ><i class="ph-bold ph-github-logo"></i
-                ></a>
+                <a class="header-social-link text-heading" href="https://github.com/Anushchinnasamy" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                  <span class="header-social-icon"><i class="ph-bold ph-github-logo"></i></span>
+                  <span class="header-social-label">GitHub</span>
+                </a>
               </li>
               <li>
-                <a
-                  class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="https://www.linkedin.com/in/anushchinnasamy"
-                  target="_blank"
-                  rel="noopener"
-                  ><i class="ph-bold ph-linkedin-logo"></i
-                ></a>
+                <a class="header-social-link text-heading" href="https://www.linkedin.com/in/anushchinnasamy" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                  <span class="header-social-icon"><i class="ph-bold ph-linkedin-logo"></i></span>
+                  <span class="header-social-label">LinkedIn</span>
+                </a>
               </li>
               <li>
-                <a
-                  class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="https://leetcode.com/u/anushchinnasamy/"
-                  target="_blank"
-                  rel="noopener"
-                  ><i class="ph-bold ph-code"></i
-                ></a>
+                <a class="header-social-link text-heading" href="https://leetcode.com/u/anushchinnasamy/" target="_blank" rel="noopener" aria-label="LeetCode" title="LeetCode">
+                  <span class="header-social-icon"><i class="ph-bold ph-code"></i></span>
+                  <span class="header-social-label">LeetCode</span>
+                </a>
               </li>
               <li>
-                <a
-                  class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="mailto:anushchinnasamy@gmail.com"
-                  ><i class="ph-bold ph-envelope-simple"></i
-                ></a>
+                <a class="header-social-link text-heading" href="mailto:anushchinnasamy@gmail.com" aria-label="Email" title="Email">
+                  <span class="header-social-icon"><i class="ph-bold ph-envelope-simple"></i></span>
+                  <span class="header-social-label">Email</span>
+                </a>
               </li>
               <li>
-                <a
-                  class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="assets/ANUSH-Resume.pdf"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="View Resume"
-                  title="View Resume"
-                  ><i class="ph-bold ph-file-pdf"></i
-                ></a>
+                <a class="header-social-link text-heading" href="assets/ANUSH-Resume.pdf" target="_blank" rel="noopener" aria-label="Resume" title="Resume">
+                  <span class="header-social-icon"><i class="ph-bold ph-file-pdf"></i></span>
+                  <span class="header-social-label">Resume</span>
+                </a>
               </li>
             </ul>
           </div>
