@@ -194,6 +194,31 @@
     border-color: #2a2f36;
   }
 
+  /* Preserve intentionally white typography across dark theme. */
+  body.site-dark .text-white,
+  body.site-dark .text-white a,
+  body.site-dark a.text-white,
+  body.site-dark .hover-text-white,
+  body.site-dark .hover-text-white:hover,
+  body.site-dark .text-stroke {
+    color: #f5f5f5 !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+  }
+
+  /* Keep white text visible inside common text-bearing elements. */
+  body.site-dark .text-white h1,
+  body.site-dark .text-white h2,
+  body.site-dark .text-white h3,
+  body.site-dark .text-white h4,
+  body.site-dark .text-white h5,
+  body.site-dark .text-white h6,
+  body.site-dark .text-white p,
+  body.site-dark .text-white span,
+  body.site-dark .text-white li {
+    color: #f5f5f5 !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+  }
+
   /* Dark-theme readability for the main light sections without changing layout. */
   body.site-dark #home,
   body.site-dark #about,
