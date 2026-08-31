@@ -52,7 +52,28 @@
         flex: 0 0 auto;
       }
     </style>
-  </head>
+  
+<style>
+.footer-three-form input.form-control,
+.footer-three-form textarea.form-control {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+.footer-three-form input.form-control::placeholder,
+.footer-three-form textarea.form-control::placeholder {
+  color: rgba(255,255,255,.7) !important;
+  -webkit-text-fill-color: rgba(255,255,255,.7) !important;
+}
+.footer-three-form input.form-control:-webkit-autofill,
+.footer-three-form input.form-control:-webkit-autofill:hover,
+.footer-three-form input.form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+</style>
+
+</head>
 
   <body class="tw-magic-cursor">
     <!--==================== Preloader Start ====================-->
@@ -2047,5 +2068,26 @@
     <script src="assets/js/main.js"></script>
     <!-- cursor js -->
     <script src="assets/js/tw-cursor.js"></script>
+
+    <!-- Clear contact form fields after submission -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.querySelector(".footer-three-form form");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", function () {
+            // Clear the fields immediately after the form is submitted.
+            setTimeout(function () {
+              contactForm.reset();
+            }, 100);
+          });
+
+          // Also clear any browser-restored values when returning to the page.
+          window.addEventListener("pageshow", function () {
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
   </body>
 </html>
