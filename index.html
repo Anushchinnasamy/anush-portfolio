@@ -114,6 +114,111 @@
   text-align: center;
 }
 </style>
+
+<style>
+  /* Theme variables + header icon hover fix */
+  :root {
+    --site-bg: #f7f7f7;
+    --site-text: #111111;
+    --site-card: #ffffff;
+    --site-border: #e5e5e5;
+    --site-muted: #555555;
+    --site-shadow: rgba(0, 0, 0, .12);
+  }
+
+  body.site-dark {
+    --site-bg: #0d0f12;
+    --site-text: #f5f5f5;
+    --site-card: #171a1f;
+    --site-border: #2a2f36;
+    --site-muted: #b8bec7;
+    --site-shadow: rgba(0, 0, 0, .35);
+    background: var(--site-bg) !important;
+    color: var(--site-text);
+  }
+
+  body.site-dark .header-three {
+    background: #111318 !important;
+    border-color: var(--site-border) !important;
+  }
+
+  body.site-dark .header-three-logo,
+  body.site-dark .header-three-social .header-social-icon,
+  body.site-dark .header-three-menu .tw-offcanvas-open-btn {
+    background: var(--site-card) !important;
+    border-color: var(--site-border) !important;
+  }
+
+  body.site-dark .header-three-social .header-social-label,
+  body.site-dark .header-three-social .header-social-link,
+  body.site-dark .header-three-social .header-social-icon,
+  body.site-dark .header-three-social .header-social-icon i {
+    color: var(--site-text) !important;
+  }
+
+  /* Keep icon/label readable on hover in BOTH themes. */
+  .header-three-social .header-social-link:hover .header-social-icon,
+  .header-three-social .header-social-link:hover .header-social-icon i,
+  .header-three-social .header-social-link:focus .header-social-icon,
+  .header-three-social .header-social-link:focus .header-social-icon i {
+    color: #111111 !important;
+  }
+  body.site-dark .header-three-social .header-social-link:hover .header-social-icon,
+  body.site-dark .header-three-social .header-social-link:hover .header-social-icon i,
+  body.site-dark .header-three-social .header-social-link:focus .header-social-icon,
+  body.site-dark .header-three-social .header-social-link:focus .header-social-icon i {
+    color: #111111 !important;
+  }
+  .header-three-social .header-social-label { color: #111111 !important; }
+  body.site-dark .header-three-social .header-social-label { color: #f5f5f5 !important; }
+
+  .theme-toggle {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(0,0,0,.12);
+    transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .theme-toggle:hover { transform: translateY(-2px); }
+  body.site-dark .theme-toggle {
+    background: #171a1f;
+    color: #f5f5f5;
+    border-color: #2a2f36;
+  }
+
+  /* Dark-theme readability for the main light sections without changing layout. */
+  body.site-dark #home,
+  body.site-dark #about,
+  body.site-dark #projects {
+    background-color: var(--site-bg) !important;
+  }
+  body.site-dark #home .text-heading,
+  body.site-dark #about .text-heading,
+  body.site-dark #projects .text-heading,
+  body.site-dark #home p,
+  body.site-dark #about p,
+  body.site-dark #projects p,
+  body.site-dark #projects a {
+    color: var(--site-text) !important;
+  }
+  body.site-dark #projects .portfolio-three-item {
+    background: var(--site-card) !important;
+    border-color: var(--site-border) !important;
+  }
+  body.site-dark #projects .portfolio-three-description,
+  body.site-dark #projects .portfolio-three-list a {
+    color: var(--site-muted) !important;
+  }
+</style>
+
 </head>
 
   <body class="tw-magic-cursor">
@@ -409,6 +514,10 @@
 
           <!-- Header Right start -->
           <div class="header-right d-flex align-items-center tw-gap-705">
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Dark theme">
+              <i class="ph-bold ph-moon"></i>
+            </button>
             <!-- Menu Button Start  -->
             <div class="header-three-menu">
               <button
@@ -2113,6 +2222,35 @@
             contactForm.reset();
           });
         }
+      });
+    </script>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("themeToggle");
+        if (!toggle) return;
+
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "dark") document.body.classList.add("site-dark");
+
+        function updateThemeButton() {
+          const dark = document.body.classList.contains("site-dark");
+          toggle.innerHTML = dark
+            ? '<i class="ph-bold ph-sun"></i>'
+            : '<i class="ph-bold ph-moon"></i>';
+          toggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+          toggle.setAttribute("title", dark ? "Light theme" : "Dark theme");
+        }
+
+        updateThemeButton();
+
+        toggle.addEventListener("click", function () {
+          document.body.classList.toggle("site-dark");
+          const dark = document.body.classList.contains("site-dark");
+          localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
+          updateThemeButton();
+        });
       });
     </script>
   </body>
