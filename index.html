@@ -1856,7 +1856,10 @@
                   data-aos-duration="1000"
                   data-aos-delay="300"
                 >
-                  <form action="#">
+                  <form action="https://formsubmit.co/anushchinnasamy@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="row">
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
@@ -1864,6 +1867,8 @@
                             type="text"
                             class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2"
                             placeholder="First Name"
+                            name="name"
+                            required
                           />
                         </div>
                       </div>
@@ -1873,6 +1878,8 @@
                             type="email"
                             class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2"
                             placeholder="Email Address"
+                            name="email"
+                            required
                           />
                         </div>
                       </div>
@@ -1881,12 +1888,15 @@
                           <textarea
                             class="form-control bg-transparent shadow-none tw-h-196-px tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 focus-tw-placeholder-text-hidden tw-placeholder-transition-2"
                             placeholder="Message"
+                            name="message"
+                            required
                           ></textarea>
                         </div>
                       </div>
                       <div class="col-xl-12">
                         <div class="contact-button">
                           <button
+                            type="submit"
                             class="tw-hover-btn bg-main-600 text-heading tw-text-xl fw-bold tw-py-4 tw-px-10 d-inline-flex justify-content-center w-100 hover-text-heading hover-bg-white tw-transition-3 tw-rounded-lg"
                           >
                             submit message
