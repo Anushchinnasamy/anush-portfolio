@@ -136,28 +136,32 @@
 </style>
 
 <style>
-  /* Hero order: header -> DEVELOPER -> image -> supporting statement. */
+  /* Hero order: header -> large centered DEVELOPER -> image -> statement -> supporting cards. */
   .banner-three-area .banner-three-wrapper {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    width: 100% !important;
   }
 
   .banner-three-area .banner-three-title {
-    order: 1;
-    white-space: nowrap !important;
+    order: 1 !important;
+    display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 36px !important;
     text-align: center !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
     position: relative !important;
     z-index: 3 !important;
-    font-size: clamp(4rem, 8.5vw, 10rem) !important;
-    line-height: 0.9 !important;
-    letter-spacing: -0.045em !important;
-    margin: 0 0 30px !important;
+    font-size: clamp(5rem, 9vw, 10rem) !important;
+    line-height: .88 !important;
+    letter-spacing: -.055em !important;
   }
 
   .banner-three-area .banner-three-man {
-    order: 2;
+    order: 2 !important;
     position: relative !important;
     inset: auto !important;
     left: auto !important;
@@ -169,28 +173,47 @@
   }
 
   .banner-three-area .banner-three-wrap {
-    order: 3;
+    order: 3 !important;
     width: 100% !important;
-    display: grid !important;
-    grid-template-columns: minmax(260px, 1fr) minmax(360px, 1.1fr) minmax(260px, 1fr) !important;
-    align-items: end !important;
-    gap: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 42px !important;
+    text-align: center !important;
   }
 
+  /* Building-scalable statement immediately follows the image. */
   .banner-three-area .banner-three-center {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-    margin: 0 !important;
+    order: 1 !important;
+    width: min(900px, 80%) !important;
+    margin: 0 auto !important;
+  }
+
+  .banner-three-area .banner-three-center-title {
+    margin: 0 auto 28px !important;
+  }
+
+  /* Keep the existing intro and counters below the statement. */
+  .banner-three-area .banner-three-left,
+  .banner-three-area .banner-three-right {
+    order: 2 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .banner-three-area .banner-three-left {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
+    text-align: left !important;
   }
 
   .banner-three-area .banner-three-right {
-    grid-column: 3 !important;
-    grid-row: 1 !important;
+    text-align: left !important;
+  }
+
+  @media (max-width: 1200px) {
+    .banner-three-area .banner-three-title {
+      font-size: clamp(4.5rem, 9vw, 8rem) !important;
+    }
   }
 
   @media (max-width: 991px) {
@@ -202,19 +225,15 @@
       width: min(430px, 65vw) !important;
     }
 
-    .banner-three-area .banner-three-wrap {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center !important;
-    }
-
-    .banner-three-area .banner-three-left,
-    .banner-three-area .banner-three-center,
-    .banner-three-area .banner-three-right {
+    .banner-three-area .banner-three-center {
       width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .banner-three-area .banner-three-title {
+      font-size: clamp(2.6rem, 12vw, 4.5rem) !important;
+      margin-bottom: 28px !important;
     }
   }
 </style>
@@ -567,7 +586,7 @@
                     />
                   </div>
                   <h1 class="banner-three-title text-black tw-mb-30">
-                    software engineer & gen ai
+                    developer
                   </h1>
                   <div
                     class="banner-three-wrap d-flex justify-content-between align-items-end position-relative z-1"
@@ -716,6 +735,11 @@
                           ></span
                           >+
                         </h4>
+                        <p
+                          class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
+                        >
+                          Requests / Sec at Peak Load
+                        </p>
                       </div>
                     </div>
                     <div
@@ -841,6 +865,11 @@
                     ></span
                     >
                   </h2>
+                  <p
+                    class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
+                  >
+                    Requests Load-Tested, Zero Overselling
+                  </p>
                 </div>
                 <div
                   class="banner-three-counter-item tw-rounded-md position-relative"
