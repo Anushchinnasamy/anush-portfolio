@@ -136,19 +136,86 @@
 </style>
 
 <style>
-  /* Keep the developer heading on one line without moving the hero image. */
+  /* Hero order: header -> DEVELOPER -> image -> supporting statement. */
+  .banner-three-area .banner-three-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
   .banner-three-area .banner-three-title {
+    order: 1;
     white-space: nowrap !important;
-    width: max-content;
-    position: relative;
-    z-index: 2;
-    font-size: clamp(4rem, 4.5vw, 6.5rem) !important;
-    line-height: 0.95 !important;
-    letter-spacing: -0.03em !important;
+    width: 100% !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 3 !important;
+    font-size: clamp(4rem, 8.5vw, 10rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.045em !important;
+    margin: 0 0 30px !important;
   }
 
   .banner-three-area .banner-three-man {
-    z-index: 1;
+    order: 2;
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 2 !important;
+    width: min(460px, 34vw) !important;
+    margin: 0 auto 34px !important;
+  }
+
+  .banner-three-area .banner-three-wrap {
+    order: 3;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(260px, 1fr) minmax(360px, 1.1fr) minmax(260px, 1fr) !important;
+    align-items: end !important;
+    gap: 30px !important;
+  }
+
+  .banner-three-area .banner-three-center {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+  }
+
+  .banner-three-area .banner-three-left {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .banner-three-area .banner-three-right {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+  }
+
+  @media (max-width: 991px) {
+    .banner-three-area .banner-three-title {
+      font-size: clamp(3.5rem, 11vw, 7rem) !important;
+    }
+
+    .banner-three-area .banner-three-man {
+      width: min(430px, 65vw) !important;
+    }
+
+    .banner-three-area .banner-three-wrap {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .banner-three-area .banner-three-left,
+    .banner-three-area .banner-three-center,
+    .banner-three-area .banner-three-right {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
   }
 </style>
 
